@@ -12,7 +12,7 @@ mongoose.connection.once('open', () => {
     console.log(' Database Connected');
 });
 mongoose.connection.on('error', () => {
-    console.log( "not Connect") 
+    console.log("not Connect")
 });
 const cors = require('cors')
 let app = express();
@@ -22,7 +22,9 @@ app.use(express.json());
 
 app.use('/', CreateUser)
 
+let PORT = process.env.PORT || 3000
 
-app.listen(3000, () => {
+
+app.listen(PORT, () => {
     console.log("run Port")
 });
